@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap');
+
+/* =====================================================
+   TEMA: DASAR LAUT (Bikini Bottom)
+   Warna diambil dari gambar:
+   laut biru, pasir, pelampung oranye, karang ungu, rumput laut hijau
+   ===================================================== */
+:root{
+  --laut-atas:#2f8fe6;
+  --laut-bawah:#0e5cb5;
+  --pasir:#f4efc2;
+  --pasir-tua:#d9d38f;
+  --pelampung:#ff8a3d;
+  --ungu:#6f4bc0;
+  --karang:#c9235f;
+  --rumput:#7ed321;
+  --tinta:#1c2530;
+  --abu:#4b5563;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Baloo 2','Trebuchet MS',Verdana,sans-serif;
+  font-size:16px;
+  line-height:1.5;
+  color:var(--tinta);
+  min-height:100vh;
+  background:
+    linear-gradient(#0e5cb52e,#0e5cb52e),
+    url('bottom.png') center bottom/cover no-repeat fixed,
+    linear-gradient(180deg,var(--laut-atas) 0%,var(--laut-bawah) 100%);
+}
+
+h1,h2{font-weight:800;letter-spacing:.2px;margin:0 0 10px}
+h1{font-size:32px;color:var(--tinta)}
+.container>h1,.container>p.muted{display:inline-block;background:var(--pasir);border:3px solid var(--tinta);border-radius:14px;padding:2px 18px;box-shadow:4px 4px 0 var(--tinta);margin-bottom:16px}
+.container>p.muted{display:block;width:fit-content;color:var(--tinta);font-weight:700;padding:0 14px}
+.panel h1,.panel h2,.card h2{color:var(--tinta);text-shadow:none}
+h2{font-size:22px}
+
+/* ---------- NAVBAR ---------- */
+.nav{
+  background:var(--ungu);
+  color:#fff;
+  border-bottom:4px solid var(--tinta);
+  box-shadow:0 4px 0 var(--pasir-tua);
+}
+.nav-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.brand{
+  font-size:20px;font-weight:800;color:var(--tinta);text-decoration:none;
+  background:var(--pelampung);
+  border:3px solid var(--tinta);
+  border-radius:999px;
+  padding:3px 16px;
+  box-shadow:0 3px 0 var(--tinta);
+}
+.nav-links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.nav-links a{
+  color:#fff;text-decoration:none;font-weight:700;
+  padding:5px 12px;border-radius:999px;border:2px solid transparent;
+}
+.nav-links a:hover{background:#ffffff26;border-color:#fff}
+.user{
+  font-size:13px;font-weight:700;color:var(--tinta);
+  background:var(--pasir);
+  border:2px solid var(--tinta);
+  padding:4px 12px;border-radius:999px;
+}
+
+/* ---------- LAYOUT ---------- */
+.container{max-width:1100px;margin:30px auto;padding:0 20px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin:22px 0}
+
+.card,.panel{
+  background:var(--pasir);
+  border:3px solid var(--tinta);
+  border-radius:18px;
+  padding:22px;
+  box-shadow:6px 6px 0 var(--tinta);
+  margin-bottom:24px;
+}
+.card:nth-child(3n+1){border-top:12px solid var(--pelampung)}
+.card:nth-child(3n+2){border-top:12px solid var(--ungu)}
+.card:nth-child(3n+3){border-top:12px solid var(--rumput)}
+.card span{display:block;color:var(--abu);font-size:15px;font-weight:700;margin-bottom:6px}
+.card strong{font-size:28px;font-weight:800}
+
+/* ---------- TOMBOL (seperti pelampung) ---------- */
+.btn{
+  display:inline-block;
+  font-family:inherit;font-size:15px;font-weight:800;
+  background:#fff;color:var(--tinta);
+  border:3px solid var(--tinta);
+  padding:7px 18px;
+  border-radius:999px;
+  text-decoration:none;cursor:pointer;
+  margin:4px 3px;
+  box-shadow:0 4px 0 var(--tinta);
+  transition:transform .08s, box-shadow .08s;
+}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--tinta)}
+.btn:active{transform:translateY(4px);box-shadow:0 0 0 var(--tinta)}
+.btn.primary{background:var(--pelampung);color:var(--tinta)}
+.btn.success{background:var(--rumput);color:var(--tinta)}
+.btn.danger{background:var(--karang);color:#fff}
+.btn.small{padding:3px 12px;font-size:13px;box-shadow:0 3px 0 var(--tinta)}
+.full{width:100%;margin:16px 0 0}
+
+.narrow{max-width:520px}
+
+/* ---------- NOTIFIKASI ---------- */
+.alert{
+  padding:10px 14px;border-radius:12px;
+  background:#d7f7a8;color:#1f3d05;
+  border:3px solid var(--tinta);
+  font-weight:700;margin-bottom:15px;
+}
+.alert.danger{background:#ffd3e1;color:#7a0f33}
+
+/* ---------- HALAMAN LOGIN ---------- */
+.login-page{
+  min-height:100vh;display:grid;place-items:center;
+  background:
+    linear-gradient(#0e5cb533,#0e5cb533),
+    url('bottom.png') center/cover no-repeat fixed,
+    linear-gradient(180deg,var(--laut-atas),var(--laut-bawah));
+}
+.login-card{
+  width:min(420px,92%);
+  background:var(--pasir);
+  border:4px solid var(--tinta);
+  padding:30px;border-radius:24px;
+  box-shadow:8px 8px 0 var(--tinta);
+}
+.logo{
+  width:74px;height:74px;margin:-62px auto 6px;
+  display:grid;place-items:center;
+  font-size:38px;
+  background:var(--pelampung);
+  border:4px solid var(--tinta);
+  border-radius:50%;
+  box-shadow:0 5px 0 var(--tinta), inset 0 0 0 8px var(--pasir);
+}
+.login-card h1{text-align:center;margin:5px 0;color:var(--tinta);text-shadow:none}
+.muted{color:var(--abu)}
+.login-card .muted{text-align:center}
+.demo{
+  margin-top:20px;padding:12px 14px;
+  background:#fff;border:3px dashed var(--ungu);border-radius:14px;
+  font-size:14px;line-height:1.7;
+}
+
+/* ---------- FORM ---------- */
+label{display:block;font-weight:800;margin:14px 0 6px}
+input,select{
+  width:100%;padding:10px 12px;
+  font-family:inherit;font-size:16px;color:var(--tinta);
+  background:#fff;
+  border:3px solid var(--tinta);
+  border-radius:12px;
+}
+input[readonly]{background:#ebe7b4}
+input:focus,select:focus,.btn:focus-visible,.nav-links a:focus-visible{
+  outline:4px solid var(--ungu);outline-offset:2px;
+}
+
+/* ---------- TABEL ---------- */
+table{width:100%;border-collapse:separate;border-spacing:0}
+th,td{text-align:left;padding:11px 12px;border-bottom:2px solid var(--pasir-tua);white-space:nowrap}
+th{background:var(--ungu);color:#fff;font-weight:800}
+th:first-child{border-top-left-radius:10px}
+th:last-child{border-top-right-radius:10px}
+tr:nth-child(even) td{background:#fbf8de}
+.table-wrap{overflow:auto}
+
+/* ---------- LENCANA STATUS ---------- */
+.badge{padding:3px 12px;border-radius:999px;background:#fff;border:2px solid var(--tinta);font-size:13px;font-weight:800}
+.badge.diverifikasi{background:var(--rumput)}
+.badge.pending{background:#ffd84d}
+.badge.ditolak{background:var(--karang);color:#fff}
+
+/* ---------- HP / LAYAR KECIL ---------- */
+@media(max-width:700px){
+  .nav-inner{align-items:flex-start;gap:10px;flex-direction:column}
+  .container{margin-top:20px}
+  th,td{padding:9px}
+  h1{font-size:26px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .btn{transition:none}
+}
